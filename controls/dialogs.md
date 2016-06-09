@@ -36,3 +36,24 @@ This method returns a `ProgressDialogController` object that exposes the `SetPro
 A picture of the progress dialog in the demo:
 
 <img src="{{site.baseurl}}/images/progressdialog.png" style="width: 800px;"/>
+
+### Dialog with icon
+
+```c#
+await this.ShowMessageAsync("This is a MessageDialog with an icon", "Left you see the ERROR icon", icon: MessageDialogIcon.Error);
+```
+
+<img src="{{site.baseurl}}/images/dialog-withIcon.png" style="width: 800px;"/>
+
+The `icon` parameter is of type `object`. This means you can pass any object.
+
+To make it easier to use predefined icons you can use a predefined enumeration `MessageDialogIcon` with the following members:
+
+* None
+* Error
+* Hand
+* Information
+* Question
+* Warning
+
+> NOTE: For the object passed as `icon` parameter the `DataTemplate` for the type of the icon is used. If there is no `DataTemplate` found the value returned by `ToString()` is displayed.
